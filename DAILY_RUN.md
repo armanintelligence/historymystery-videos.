@@ -10,7 +10,7 @@ bash pipeline/setup.sh
 
 ## 2. Pick the topic
 
-Take the first `[ ]` topic in `topics.md`. The episode slug is `<posting date>-<short-name>`, for example `2026-11-26-wow-signal`. The posting date is today if the run starts before 12:00 India time, otherwise tomorrow.
+Take the first `[ ]` topic in `topics.md`. The episode slug is `<posting date>-<short-name>`, for example `2026-11-26-wow-signal`. The posting date is **tomorrow** (India time), which gives the owner a day to review. First check the Metricool planner with `getScheduledPosts`. If tomorrow already has a post at 16:00, use the first free day after it.
 
 ## 3. Research
 
