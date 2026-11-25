@@ -1,6 +1,6 @@
-# Weekly run: make and schedule one long video
+# Daily long video: make and schedule one long video
 
-One long, horizontal video a week: a deeper version of a story that already ran as a Short. Read `CHANNEL_RULES.md` first; its rules override everything here. The steps match `DAILY_RUN.md` except where noted.
+One long, horizontal video a day: the full version of the story told in that day's Short. Read `CHANNEL_RULES.md` first; its rules override everything here. The steps match `DAILY_RUN.md` except where noted.
 
 ## 1. Set up
 
@@ -10,10 +10,10 @@ bash pipeline/setup.sh
 
 ## 2. Pick the date and topic
 
-- The posting slot is **Sunday 19:00 India time** (Asia/Calcutta). Run this on Saturday for the next day.
-- Check the Metricool planner with `getScheduledPosts` for that Sunday. If it already has a long video (a post at 19:00, or a YouTube post whose type is `video`), stop: this week is already done.
-- The daily Short at 16:00 on the same Sunday is fine. Long videos are the one exception to "one post a day".
-- Topic: one of the Shorts posted in the last 7 days (the `[x]` lines in `topics.md`) that has no folder in `long/` yet. Prefer the one with the most YouTube views if Metricool analytics show it, otherwise the most recent.
+- The posting slot is **19:00 India time** (Asia/Calcutta) **tomorrow**. The run happens in the early afternoon, after the daily Short run has scheduled tomorrow's Short.
+- Check the Metricool planner with `getScheduledPosts` for tomorrow. If it already has a long video (a post at 19:00, or a YouTube post whose type is `video`), stop: tomorrow is already done.
+- The Short at 16:00 on the same day is expected. Long videos are the one exception to "one post a day". Never schedule two long videos on the same day.
+- Topic: the Short scheduled for tomorrow (its `[x]` line in `topics.md` carries tomorrow's date), so the Short and the long video tell the same story on the same day. If that topic already has a folder in `long/`, or tomorrow has no Short, use the most recent `[x]` topic that has no folder in `long/` yet.
 - Slug: `<posting date>-<short-name>-long`, for example `2026-11-29-wow-signal-long`.
 
 ## 3. Research
@@ -64,7 +64,7 @@ Check both raw links return HTTP 200:
 
 ## 9. Schedule in Metricool
 
-Brand `8303864`, timezone `Asia/Calcutta`, 19:00 on the Sunday. Providers: **youtube and facebook only** (not Instagram). Media: the raw mp4 link. `text`: the description from `meta.json`.
+Brand `8303864`, timezone `Asia/Calcutta`, 19:00 on the posting date. Providers: **youtube and facebook only** (not Instagram). Media: the raw mp4 link. `text`: the description from `meta.json`.
 
 - `youtubeData`: `{"title": <title>, "type": "video", "privacy": "public", "madeForKids": false, "category": "EDUCATION", "tags": [...]}`
 - `facebookData`: `{"type": "POST", "title": <title>}`
@@ -72,4 +72,4 @@ Brand `8303864`, timezone `Asia/Calcutta`, 19:00 on the Sunday. Providers: **you
 
 ## 10. Report
 
-Send the owner the video file, the title, the posting date and time, the sources, and how to cancel: delete the post in the Metricool planner before 7 PM on Sunday.
+Send the owner the video file, the title, the posting date and time, the sources, and how to cancel: delete the post in the Metricool planner before 7 PM on the posting date.

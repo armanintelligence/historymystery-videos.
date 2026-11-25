@@ -33,6 +33,6 @@ Faceless channel: **unexplained history, investigated with science.** Every vide
 
 - **Daily Short:** 45–80 seconds, 8–10 scenes, one topic, one surprising question.
 - Posted at **4 PM India time** (Asia/Calcutta) on YouTube (Short), Instagram (Reel) and Facebook (Reel) through Metricool.
-- **Weekly long video:** 6–8 minutes, horizontal 1920×1080, a deeper version of a recent Short, in numbered chapters. Posted **Sundays at 7 PM India time** on YouTube (video) and Facebook (video post). See `LONG_RUN.md`. This is the only case where two posts share a day.
+- **Daily long video:** 6–8 minutes, horizontal 1920×1080, the full version of that day's Short, in numbered chapters. Posted **every day at 7 PM India time** on YouTube (video) and Facebook (video post). See `LONG_RUN.md`. This is the only case where two posts share a day: one Short at 4 PM and one long video at 7 PM.
 - Title: one strong emotion or curiosity word at most, under 70 characters.
 - `madeForKids: false`, category `EDUCATION`.
