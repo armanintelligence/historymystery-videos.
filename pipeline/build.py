@@ -1,6 +1,7 @@
-"""Build one Short from an episode folder.
+"""Build one Short (or, with HM_FORMAT=long, one horizontal long video) from an episode folder.
 
 Usage:  python3 pipeline/build.py episodes/<slug>
+        HM_FORMAT=long python3 pipeline/build.py long/<slug>
 Output: videos/<slug>.mp4  (1080x1920, 30 fps, AI narrator + natural sounds, no music)
 
 The episode folder holds scenes.py, which must define:
@@ -17,7 +18,7 @@ from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from lib import W, H, FPS, caption, caps_at, ramp
+from lib import W, H, FPS, LONG, caption, caps_at, ramp
 from sfx import Track, SR
 
 ep_dir = os.path.abspath(sys.argv[1])
@@ -118,9 +119,10 @@ if os.environ.get('PREVIEW'):
     ims = []
     for s in TL:
         for q in (0.3, 0.75):
-            ims.append(frame(s, s['new'] * q).resize((216, 384)))
-    sheet = Image.new('RGB', (216 * 10, 384 * math.ceil(len(ims) / 10)))
-    for i, im in enumerate(ims): sheet.paste(im, ((i % 10) * 216, (i // 10) * 384))
+            ims.append(frame(s, s['new'] * q).resize((W // 5, H // 5)))
+    tw, th = W // 5, H // 5
+    sheet = Image.new('RGB', (tw * 10, th * math.ceil(len(ims) / 10)))
+    for i, im in enumerate(ims): sheet.paste(im, ((i % 10) * tw, (i // 10) * th))
     sheet.save(f'{work}/preview.png'); print('preview', f'{work}/preview.png'); sys.exit()
 
 prev, lst = 0, []
@@ -128,7 +130,7 @@ for s in TL:
     end = int(round((s['offset'] + s['new']) * FPS)); n = end - prev; prev = end
     out = f"{work}/parts/{s['name']}.mp4"; tmp = out.replace('.mp4', '.tmp.mp4')
     p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(FPS), '-i', '-',
-                          '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '18', '-pix_fmt', 'yuv420p', tmp], stdin=subprocess.PIPE)
+                          '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22' if LONG else '18', '-pix_fmt', 'yuv420p', tmp], stdin=subprocess.PIPE)
     for i in range(n):
         p.stdin.write(frame(s, i / FPS).tobytes())
     p.stdin.close()

@@ -2,8 +2,12 @@ import numpy as np, pickle, math, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 from PIL import Image, ImageDraw, ImageFont
 
-W, H, FPS = 1080, 1920, 30
-VIS_CY = 690  # centre of the visual area
+LONG = os.environ.get('HM_FORMAT') == 'long'  # horizontal long-form video
+W, H, FPS = (1920, 1080, 30) if LONG else (1080, 1920, 30)
+VIS_CY = 470 if LONG else 690  # centre of the visual area
+TOP_Y = 70 if LONG else 178     # top label line
+CAP_Y = 940 if LONG else 1360   # caption box centre
+SKY_Y = H if LONG else 1100     # stars drawn above this
 
 FD = os.path.join(HERE, 'fonts') + '/'
 def font(name, size):
@@ -119,17 +123,18 @@ def top_label(img, s, a=1.0):
     d = ImageDraw.Draw(img, 'RGBA')
     tw = d.textlength(s, font=F_LABEL)
     x = W / 2 - (tw + 34) / 2
-    d.ellipse([x, 178 - 9, x + 18, 178 + 9], fill=AMBER + (int(255 * a),))
-    d.text((x + 34, 178), s, font=F_LABEL, fill=WHITE + (int(255 * a),), anchor='lm')
+    d.ellipse([x, TOP_Y - 9, x + 18, TOP_Y + 9], fill=AMBER + (int(255 * a),))
+    d.text((x + 34, TOP_Y), s, font=F_LABEL, fill=WHITE + (int(255 * a),), anchor='lm')
 
 
-def caption(img, text, hl=(), a=1.0, cy=1360):
+def caption(img, text, hl=(), a=1.0, cy=None):
     """Burnt-in caption box. Words in hl are amber."""
     if a <= 0 or not text:
         return
     d = ImageDraw.Draw(img, 'RGBA')
     words = text.split()
-    maxw = 860
+    cy = CAP_Y if cy is None else cy
+    maxw = 1500 if LONG else 860
     lines, cur = [], []
     for w_ in words:
         test = ' '.join(cur + [w_])
@@ -142,7 +147,7 @@ def caption(img, text, hl=(), a=1.0, cy=1360):
     lh = 74
     bh = lh * len(lines) + 44
     bw = max(d.textlength(' '.join(l), font=F_CAP) for l in lines) + 70
-    cx = 520
+    cx = W / 2 if LONG else 520
     y0 = cy - bh / 2
     d.rounded_rectangle([cx - bw / 2, y0, cx + bw / 2, y0 + bh], radius=26,
                         fill=(0, 0, 0, int(165 * a)))
@@ -168,12 +173,12 @@ def caps_at(t, caps):
 
 def stars(n=260, seed=3):
     rng = np.random.default_rng(seed)
-    return np.c_[rng.uniform(0, W, n), rng.uniform(0, 1100, n), rng.uniform(0.6, 2.4, n), rng.uniform(0, 6.28, n)]
+    return np.c_[rng.uniform(0, W, n), rng.uniform(0, SKY_Y, n), rng.uniform(0.6, 2.4, n), rng.uniform(0, 6.28, n)]
 
 STARS = stars()
 
 
-def draw_stars(d, t, a=1.0, ymax=1100):
+def draw_stars(d, t, a=1.0, ymax=SKY_Y):
     for x, y, r, ph in STARS:
         if y > ymax:
             continue

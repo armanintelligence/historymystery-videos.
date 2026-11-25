@@ -12,7 +12,8 @@ Faceless channel: **unexplained history, investigated with science.** Every vide
 
 - Dark navy background, amber (#FF963C) highlight, cyan (#6ED2FF) secondary, white text, Inter fonts.
 - Made of maps, diagrams, skies, landscapes, objects, buildings, cross-sections, globes and timelines, drawn in code (`pipeline/lib.py`).
-- Vertical 1080×1920, 30 fps. Keep important things between y=220 and y=1150. Captions go in the box at y≈1360, never at the very bottom or the right edge, where YouTube's buttons sit.
+- Shorts: vertical 1080×1920, 30 fps. Keep important things between y=220 and y=1150. Captions go in the box at y≈1360, never at the very bottom or the right edge, where YouTube's buttons sit.
+- Long videos: horizontal 1920×1080, 30 fps, built with `HM_FORMAT=long`. Visuals between y=110 and y=830, captions centred at y≈940, at most 2 lines.
 - Burnt-in captions: every narrated line, with key words in amber.
 
 ## Narration
@@ -32,5 +33,6 @@ Faceless channel: **unexplained history, investigated with science.** Every vide
 
 - **Daily Short:** 45–80 seconds, 8–10 scenes, one topic, one surprising question.
 - Posted at **4 PM India time** (Asia/Calcutta) on YouTube (Short), Instagram (Reel) and Facebook (Reel) through Metricool.
+- **Weekly long video:** 6–8 minutes, horizontal 1920×1080, a deeper version of a recent Short, in numbered chapters. Posted **Sundays at 7 PM India time** on YouTube (video) and Facebook (video post). See `LONG_RUN.md`. This is the only case where two posts share a day.
 - Title: one strong emotion or curiosity word at most, under 70 characters.
 - `madeForKids: false`, category `EDUCATION`.

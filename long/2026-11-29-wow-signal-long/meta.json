@@ -1,0 +1,21 @@
+{
+  "title": "The Wow! Signal: The Full Story of 72 Seconds From Deep Space",
+  "description": "In August 1977, Ohio's Big Ear radio telescope recorded a 72-second signal near hydrogen's frequency, about 30 times stronger than the background noise. It has never been detected again. Here's the full story, and what science now thinks it was.\n\n0:00 Intro\n0:25 How do you listen for aliens?\n1:04 The Big Ear\n2:29 The night of the signal\n3:11 Why it mattered\n3:33 The missing echo\n4:02 Listening again\n4:39 What was it?\n5:43 Still a mystery\n\nSources:\n- Jerry Ehman, The Big Ear Wow! Signal, 30th anniversary report: https://www.bigear.org/Wow30th/wow30th.htm\n- Cocconi & Morrison, Searching for Interstellar Communications, Nature 1959 (reprint): https://www.bigear.org/vol1no1/interste.htm\n- Méndez et al., Arecibo Wow! I (2024): https://arxiv.org/abs/2408.08513\n- Méndez et al., Arecibo Wow! II (2025): https://arxiv.org/abs/2508.10657\n- Scientific American: https://www.scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved/\n- National Geographic: https://www.nationalgeographic.com/science/article/wow-radio-signal-aliens-mystery\n- Planetary Society, review of The Elusive Wow: https://www.planetary.org/articles/3346\n- Live Science / Space.com on the comet idea: https://www.space.com/37178-astronomers-skeptical-about-wow-signal.html\n- NBC News, The Wow mystery turns 30: https://www.nbcnews.com/science/cosmic-log/wow-mystery-turns-30-flna6c10405440\n\n#wowsignal #seti #space #history #mystery #science",
+  "tags": ["wow signal", "wow signal explained", "1977", "big ear", "seti", "jerry ehman", "hydrogen line", "1420 mhz", "sagittarius", "arecibo", "magnetar", "radio telescope", "aliens", "history", "mystery", "science", "unexplained"],
+  "sources": [
+    {"title": "Jerry Ehman: The Big Ear Wow! Signal, 30th anniversary report", "url": "https://www.bigear.org/Wow30th/wow30th.htm"},
+    {"title": "Cocconi & Morrison, 'Searching for Interstellar Communications', Nature 184 (1959), reprint", "url": "https://www.bigear.org/vol1no1/interste.htm"},
+    {"title": "Méndez, Ortiz Ceballos & Zuluaga, 'Arecibo Wow! I' (arXiv:2408.08513)", "url": "https://arxiv.org/abs/2408.08513"},
+    {"title": "Méndez et al., 'Arecibo Wow! II: Revised Properties of the Wow! Signal' (arXiv:2508.10657)", "url": "https://arxiv.org/abs/2508.10657"},
+    {"title": "Universe Today: The Wow! signal gets an update", "url": "https://www.universetoday.com/articles/the-wow-signal-gets-an-update-it-was-even-strong-than-we-thought"},
+    {"title": "Scientific American: The Wow! Signal SETI mystery might at last be solved", "url": "https://www.scientificamerican.com/article/the-wow-signal-seti-mystery-might-at-last-be-solved/"},
+    {"title": "National Geographic: This mysterious radio signal has puzzled astronomers for nearly 50 years", "url": "https://www.nationalgeographic.com/science/article/wow-radio-signal-aliens-mystery"},
+    {"title": "Science News: The historic 'Wow!' signal may finally have a source", "url": "https://www.sciencenews.org/article/wow-signal-source-hydrogen-cloud"},
+    {"title": "Planetary Society: One man's quest for SETI's most promising signal (Robert Gray)", "url": "https://www.planetary.org/articles/3346"},
+    {"title": "Live Science / Space.com: Comet likely didn't cause the Wow! signal", "url": "https://www.space.com/37178-astronomers-skeptical-about-wow-signal.html"},
+    {"title": "NBC News: The 'Wow' mystery turns 30", "url": "https://www.nbcnews.com/science/cosmic-log/wow-mystery-turns-30-flna6c10405440"},
+    {"title": "Wikipedia: Ohio State University Radio Observatory (Big Ear)", "url": "https://en.wikipedia.org/wiki/Ohio_State_University_Radio_Observatory"},
+    {"title": "NAAPO brochure (bigear.org): Big Ear history", "url": "https://bigear.org/ohsmarkr/NAAPObrochure.htm"},
+    {"title": "Delaware Gazette (1998), via bigear.org: Big Ear dismantled", "url": "https://bigear.org/flatdown.htm"}
+  ]
+}
