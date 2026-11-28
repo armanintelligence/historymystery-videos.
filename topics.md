@@ -6,7 +6,7 @@ Pick the first topic marked `[ ]`, then mark it `[x]` with the date posted. Add 
 - [x] 2026-11-26 · The Wow! Signal, 1977: 72 seconds from deep space
 - [x] 2026-11-27 · The Carrington Event, 1859: when telegraph wires caught fire
 - [x] 2026-11-28 · Lonar Crater, India: a lake made by a meteorite
-- [ ] The Antikythera Mechanism: a 2,000-year-old computer
+- [x] 2026-11-29 · The Antikythera Mechanism: a 2,000-year-old computer
 - [ ] 1816, the Year Without a Summer: a volcano and a missing season
 - [ ] The Iron Pillar of Delhi: 1,600 years without rusting
 - [ ] Lake Nyos, 1986: the lake that released a deadly gas cloud
